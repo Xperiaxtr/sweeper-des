@@ -1,0 +1,37 @@
+<launch>
+<rosparam command="load" file="../sweeper_ws/src/sweeper_haide/calibration/data/mapping_localization.yaml" />
+    <node pkg="mapping" type = "calib_node" name = "calib_node" output = "screen">
+
+
+    <param name="key_frames_path"     	   type="str"     value=  "$(find imu-lidar)" /> 
+
+    <param name="corner_map_filter"     	   type="double"     value="0.2" /> 
+    <param name="surf_map_filter"                type="double"     value="0.2" />
+    <param name="intensity_map_filter"     	   type="double"     value="0.2" /> 
+    <param name="corner_filter"     	   type="double"     value="0.2" /> 
+    <param name="surf_filter"     	   type="double"     value="0.4" /> 
+    <param name="intensity_filter"     	   type="double"     value="0.2" /> 
+
+    <param name="save_corner_size"     	   type="double"     value="0.3" /> 
+    <param name="save_surf_size"     	   type="double"     value="0.5" /> 
+    <param name="save_intensity_size"     	   type="double"     value="0.3" /> 
+    <param name="save_map_size"     	   type="double"     value="0.3" /> 
+
+    <!--feature参数-->
+    <param name="livox_hight"     	   type="double"     value="1.79" /> 
+    <param name="corner_min_curvature"     	   type="double"     value="0.01" /> 
+    <param name="surf_max_curvature"     	   type="double"     value="0.005" />
+    <param name="the_min_hight"     	   type="double"     value="0.06" /> 
+    <param name="intensity_min_different"     	   type="double"     value="15.0" /> 
+    <param name="min_slope_different"     	   type="double"     value="0.1" />
+    <param name="max_z_hight"     	   type="double"     value="0.06" />
+
+
+    <param name="map_filter"     	   type="double"     value="0.1" />
+
+
+    
+    </node>
+
+    <node pkg = "rviz" type = "rviz" name="calib_mapping_rviz" args="-d $(find mapping)/launch/rviz/calib.rviz" />
+</launch>

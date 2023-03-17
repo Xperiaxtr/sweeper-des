@@ -1,0 +1,17 @@
+header:
+  stamp:
+    secs: 1422601952
+    nsecs: 288805456
+  seq: 0
+  frame_id: car
+transform:
+  translation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  rotation:
+    x: 0.00840715
+    y: 0.169076
+    z: 0.0
+    w: 0.985567
+child_frame_id: lidar

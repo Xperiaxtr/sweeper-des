@@ -1,0 +1,12 @@
+<launch>
+ <group ns="pavo_scan_01">
+  <include file="$(find pavo_ros)/launch/pavo_scan_left.launch">
+  </include>
+ </group>
+
+ <group ns="pavo_scan_02">
+  <include file="$(find pavo_ros)/launch/pavo_scan_right.launch">
+  </include>
+ </group>
+ 
+</launch>

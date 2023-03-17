@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="nano_mmw" type="mmw_pub" name="mmw_pub" output="screen" respawn="false">
+    <param name="can_device" value="can0"/>
+  </node>
+</launch>

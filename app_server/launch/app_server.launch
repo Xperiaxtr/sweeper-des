@@ -1,0 +1,7 @@
+<launch>
+    <param name="/carname" value="haide_260"/>
+    <param name="/path" value="/home/cidi/sweeper_ws/src/sweeper_haide/data/path"/>
+    <param name="/host" value="192.168.1.108"/>
+    <node pkg="app_server" name="app_server" type="client_app.py" output="screen">
+    </node>
+</launch>

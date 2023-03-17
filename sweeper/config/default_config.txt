@@ -1,0 +1,3 @@
+mode:4
+side:0
+line:G_gps跟线效果测试.txt

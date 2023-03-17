@@ -1,0 +1,6 @@
+<launch>
+
+    <node pkg="calib_lidar_to_gps_imu" type="get_gps_to_lidar" name="get_gps_to_lidar" output="screen" >
+        <param name="path_name"          type="string"   value="/path/gps_odom_path.txt" />
+    </node>
+</launch>

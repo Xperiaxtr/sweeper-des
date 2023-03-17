@@ -1,0 +1,98 @@
+<launch>
+  <node pkg="controll" type="sweeper_controll" name="sweeper_controll" output="screen" respawn="false">
+
+    <param name="curb_v_min"      value="0.416" type="double"/>
+    <param name="curb_v_middle"   value="0.694" type="double"/>
+    <param name="curb_v_max"      value="1.111"  type="double"/>
+    
+    <param name="trace_v_min"     value="0.416" type="double"/>
+    <param name="trace_v_middle"  value="0.694" type="double"/>
+    <param name="trace_v_max"     value="1.111"  type="double"/>
+
+    <param name="fre_control" value="20.0" type="double"/>
+    <param name="fre_ultra" value="10.0"   type="double"/>
+
+    <param name="wheelCurvlebase" value="0.6" type="double"/>
+   
+    <param name="curb_v_min_lookahead_distance" value="2.5" type="double"/>
+    <param name="curb_v_min_lookahead_distance2" value="3.0" type="double"/>
+    <param name="curb_v_middle_lookahead_distance" value="3.0" type="double"/>
+    <param name="curb_v_middle_lookahead_distance2" value="3.0" type="double"/>
+    <param name="curb_v_max_lookahead_distance" value="4.5" type="double"/>
+    <param name="curb_v_max_lookahead_distance2" value="5.0" type="double"/>
+
+    <param name="trace_v_min_lookahead_distance" value="1.5" type="double"/>
+    <param name="trace_v_min_lookahead_distance2" value="1.5" type="double"/>
+    <param name="trace_v_middle_lookahead_distance" value="2.5" type="double"/>
+    <param name="trace_v_middle_lookahead_distance2" value="3.0" type="double"/>
+    <param name="trace_v_max_lookahead_distance" value="4.0" type="double"/>
+    <param name="trace_v_max_lookahead_distance2" value="4.5" type="double"/>
+
+    <param name="position_tolerance" value="0.2" type="double"/>
+    <param name="steering_angle_limit" value="0.786" type="double"/>
+    <param name="turn_left_threshold" value="10.0" type="double"/>
+    <param name="control_angular_para" value="20.0" type="double"/>
+    <param name="angular_max" value="400.0" type="double"/>
+    <param name="angular_min" value="300.0" type="double"/>
+    <param name="diff_steering_limited" value="15.0" type="double"/>
+
+    <param name="proportional_gain_steering" value="2.0" type="double"/>
+    <param name="factor_steering_angle1" value="0.9" type="double"/>
+    <param name="factor_steering_angle2" value="0.1" type="double"/>
+
+    <param name="ultra_forward_stopping_distance" value="1.5" type="double"/>
+    <param name="ultra_lateral_stopping_distance" value="0.2" type="double"/>
+    <param name="ultra_lateral_dynamic_distance"  value="0.4" type="double"/>
+
+    <param name="kgc"                 value="1.0"      type="double"/>
+    <param name="coeffi_a"            value="0.92"      type="double"/>
+    <param name="coeffi_b"            value="0.2"      type="double"/>
+
+    <param name="allowed_nums_empty_path"        value="2"      type="int" />
+    
+    <param name="flag_is_fusion"                     value="true"      type="bool" />
+    <param name="flag_lead_correct_compensation"     value="true"      type="bool" />
+    <param name="flag_smooth_steering"               value="true"      type="bool" />
+    <param name="flag_ultra_test"                    value="false"      type="bool" />
+   
+    <param name="pid_dt" value="0.05"/>
+
+    <param name="torque_pid_kp" value="10.0"/>
+    <param name="torque_pid_ki" value="5"/>
+    <param name="torque_pid_kd" value="0.0"/>
+    <param name="torque_min" value="20.0"/>
+    <param name="torque_max" value="45.0"/>
+    <param name="last_torque" value="0.0"/>
+
+    <param name="brake_pid_kp" value="30.0"/>
+    <param name="brake_pid_ki" value="15.0"/>
+    <param name="brake_pid_kd" value="0.0"/>
+    <param name="brake_min" value="40.0"/>
+    <param name="brake_max" value="100.0"/>
+    <param name="last_brake" value="00.0"/>
+
+    <!--清扫车参数/-->
+    <param name="left_width" value="0.68"/>
+    <param name="right_width" value="0.65"/>
+    <param name="front_length" value="1.35"/>
+    <param name="back_length" value="1.4"/>
+    <param name="e_back_length" value="0.3"/>
+    <param name="forward_x" value="0.45"/>
+
+    <!--单线激光障碍物判断区域参数/-->
+    <param name="estop_thickness" value="0.25"/>
+    <param name="fstop_line" value="1.6"/>
+    <param name="lstop_line" value="1.6"/>
+    <param name="rstop_line" value="1.6"/>
+    <param name="bstop_line" value="1.6"/>
+
+    <!--各区域判定为障碍物的点云点数阈值/-->
+    <param name="emerge_nums" value="10"/>
+    <param name="fstop_nums" value="8"/>
+    <param name="lateral_nums" value="8"/>
+
+    <param name="valid_stop_nums" value="2"/>
+
+
+  </node>
+</launch>

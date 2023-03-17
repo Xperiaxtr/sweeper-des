@@ -1,0 +1,49 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/pcl-1.7"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "knownCompilers": [
+                {
+                    "path": "/usr/bin/gcc",
+                    "isC": true
+                },
+                {
+                    "path": "/usr/bin/g++",
+                    "isC": false
+                },
+                {
+                    "path": "/usr/bin/cpp",
+                    "isC": false
+                },
+                {
+                    "path": "/usr/bin/gcc-5",
+                    "isC": true
+                },
+                {
+                    "path": "/usr/bin/g++-5",
+                    "isC": false
+                },
+                {
+                    "path": "/usr/bin/gcc",
+                    "isC": false
+                }
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="ultrasonic_daoxiang" type="pub_ultrasonic" name="pub_ultrasonic" output="screen" respawn="false">
+    <param name="device_port"      value="/dev/ttyUSB0"/>
+    <param name="baudrate"         value="115200"/>
+    <param name="interval_time"    value="35000"/>
+    <param name="ultra_nums"       value="10"/>
+    <param name="start_nums"       value="5"/>
+    <param name="flag_test"        value="false"/>
+  </node>
+</launch>

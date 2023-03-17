@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <node pkg="gnss" type="gnss" name="gnss" output="screen">  
+    <param name="gnss_mode" value="cidi"/>   <!--qianxuan -->
+    <param name="protocol" value="/RTCMV3"/> <!--/RTCM32_GGB -->
+    <param name="base_station_ip" value="222.240.49.4"/>   <!--222.240.49.4-->
+    <param name="base_station_port" value="2101"/>         <!--2101-->
+
+
+    <param name="bynav_ip" value="192.168.0.98"/>          <!--192.168.1.98-->
+    <param name="bynav_send_port" value="2222"/>           <!--2222-->
+    <param name="bynav_receive_port" value="8000"/>        <!--8000-->
+    <param name="user" value="sweep"/>       <!--qxpkcr002-->
+    <param name="password" value="sweep"/>   <!--b0c33e9-->
+    <param name="flag_dgps" value="false"/>
+    <param name="error_position"  value="0.3"/>
+    <!--param name="error_heading"  value="3.0"/-->
+    <param name="flag_ctrl_serial"  value="false"/>
+    <!--param name="flag_diff_serial"  value="false"/-->
+    <param name="flag_diff_write"   value="false"/>
+    <!--位置精度标志：0:bad; 1:general; 2:good; 3:best/-->
+    <param name="flag_position_accuracy"  value="-1"/>
+    <!--航向角精度标志：0:bad; 1:good/-->
+    <!--param name="flag_heading_accuracy"  value="-1"/-->
+    <param name="flag_tcp_port"  value="false"/>
+    <param name="flag_longtitude_error"  value="fasle"/>
+
+    <param name="install_angle"  value="-90.0"/>
+    <param name="gpgga_rate"  value="20.0"/>
+  </node>
+</launch>

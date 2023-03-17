@@ -1,0 +1,16 @@
+<launch>
+  <node pkg="app_server" type="app_server" name="app_server" output="screen">
+    <!--map保存路径/-->
+    <param name="line_path" type="string" value="../sweeper_ws/src/sweeper_haide/data/path/"/>
+
+    <!--服务器ip/-->
+    <param name = "ip" type = "string" value = "222.240.49.3" />
+
+    <!--车名/-->
+    <param name = "car_name" type = "string" value = "haide_0286" />
+
+    <!--app显示路径个数/-->
+    <param name = "show_num" type = "int" value = "80" />
+
+  </node>
+</launch>

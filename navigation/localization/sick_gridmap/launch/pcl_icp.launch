@@ -1,0 +1,6 @@
+<launch>
+  <node name="sick_gridmap"  pkg="sick_gridmap"  type="pcl_icp" output="screen">
+    <!--param name="range_x" type="int" value="270"/-->  
+  </node>
+  
+</launch>

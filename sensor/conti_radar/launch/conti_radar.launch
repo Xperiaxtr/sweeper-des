@@ -1,0 +1,17 @@
+<launch>
+    <node name="conti_radar"  pkg="conti_radar"  type="conti_radar" output="screen">
+      <param name="can_filter_nums"     type="int"     value="5"/>
+      <param name="can_channel_id"      type="int"     value="1"/>
+      
+      <param name="current_sensor_id"   type="int"     value="0"/>
+
+      <param name="img_width"           type="int"     value="500"/>
+      <param name="img_height"          type="int"     value="500"/>
+      <param name="car_immg_position_x" type="int"     value="0"/>
+      <param name="car_immg_position_y" type="int"     value="500"/>
+      <param name="lon_max"             type="double"  value="10.0"/>
+      <param name="lat_max"             type="double"  value="10.0"/>
+      <param name="flag_img_show"       type="bool"    value="true"/>
+      <param name="flag_set"            type="bool"    value="false"/>
+    </node>
+</launch>

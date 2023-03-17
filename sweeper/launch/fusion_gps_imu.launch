@@ -1,0 +1,20 @@
+<launch>
+  <node pkg="sweeper_odom" type="fusion_gps_imu" name="fusion_gps_imu" output="screen" respawn="false">
+  
+  <param name="lidar_to_gps_q_x"                type="double"     value="-0.00265999210362202" />
+  <param name="lidar_to_gps_q_y"                type="double"     value="-0.00897669777718909" />
+  <param name="lidar_to_gps_q_z"                type="double"     value="0.00907993340168112" />
+  <param name="lidar_to_gps_q_w"                type="double"     value="0.999914945457086" />
+
+  <param name="lidar_to_gps_v_x"                type="double"     value="0.978790272111024" />
+  <param name="lidar_to_gps_v_y"                type="double"     value="0.534726712322805" />
+  <param name="lidar_to_gps_v_z"                type="double"     value="0.847803130466346" />
+
+
+  <param name="imu_to_gps_q_x"                type="double"     value="0.0130492" />
+  <param name="imu_to_gps_q_y"                type="double"     value="-0.0177604" />
+  <param name="imu_to_gps_q_z"                type="double"     value="0.000231815" />
+  <param name="imu_to_gps_q_w"                type="double"     value="0.999757" />
+
+  </node>
+</launch>

@@ -1,0 +1,27 @@
+<launch>
+ <node pkg="radar_fusion" type="radar_fusion" name="radar_fusion" output="screen" respawn="false">
+  <!--左单线到中点的距离/-->
+  <param name="left_width"             value="0.68"/>
+
+  <!--右单线到中点的距离/-->
+  <param name="right_width"            value="0.65"/>
+
+  <!--铰接式底盘前半部分长度/-->
+  <param name="front_length"           value="1.35"/>
+
+  <!--铰接式底盘后半部分长度/-->
+  <param name="back_length"            value="1.6"/>
+  
+  <!--扫盘到车正前方距离/-->
+  <param name="forward_x"             value="0.4"/>
+
+　<!--单线激光离大疆激光雷达的高度差/-->
+  <param name="wj_height"              value="1.206"/>
+
+　<!--发送间隔时间/-->
+  <param name="publish_time"            value="0.1"/>
+
+  <param name="dust_filter_x"       value="0.8"/>
+  <param name="dust_filter_y"       value="1.2"/>
+ </node> 
+</launch>

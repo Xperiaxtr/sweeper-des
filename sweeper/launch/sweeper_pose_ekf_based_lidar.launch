@@ -1,0 +1,28 @@
+<launch>
+  <node pkg="sweeper_pose_ekf" type="sweeper_pose_ekf_based_lidar" name="sweeper_pose_ekf_based_lidar" output="screen" respawn="false">
+    <param name="omga_variance" value="0.4" type="double"/>
+    <param name="speed_acc" value="0.3" type="double"/>
+    <param name="slam_cov_mag" value="0.2" type="double"/>
+    <!--三种模式，1.地图模式（只采用lidar数据和imu和车速）
+    2.gnss模式（只采用gnss和imu车速）
+    3.全局模式（采用gnss，lidar,imu，车速融合）-->
+    <param name="use_lidar_data" value="true" type="bool"/>
+    <param name="use_gnss_data" value="true" type="bool"/>
+
+    <param name="predict_frequency" value="20.0" type="double"/>
+    <param name="extend_state_step" value="50" type="double"/>
+    <param name="pose_additional_delay" value="0.0" type="double"/>
+    <param name="pose_measure_uncertainty_time" value="0.01" type="double"/>
+    <param name="pose_rate" value="10.0" type="double"/>
+    <param name="pose_stddev_x" value="0.05" type="double"/>
+    <param name="pose_stddev_y" value="0.05" type="double"/>
+    <param name="pose_stddev_yaw" value="0.035" type="double"/>
+    <param name="use_pose_with_covariance" value="true" type="bool"/>
+
+    <param name="proc_stddev_yaw_c" value="0.05" type="double"/>
+    <param name="proc_stddev_v_c" value="2.0" type="double"/>
+    <param name="proc_stddev_w_c" value="0.2" type="double"/>
+    <param name="proc_stddev_wb_c" value="2.0" type="double"/>
+    <param name="proc_stddev_vs_c" value="0.2" type="double"/>
+  </node>
+</launch>

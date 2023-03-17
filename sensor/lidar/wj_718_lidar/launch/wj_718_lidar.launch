@@ -1,0 +1,12 @@
+<launch>
+ <group ns="wj_718_lidar_01">
+  <include file="$(find wj_718_lidar)/launch/wj_718_lidar_01.launch">
+  </include>
+ </group>
+
+ <group ns="wj_718_lidar_02">
+  <include file="$(find wj_718_lidar)/launch/wj_718_lidar_02.launch">
+  </include>
+ </group>
+ 
+</launch>

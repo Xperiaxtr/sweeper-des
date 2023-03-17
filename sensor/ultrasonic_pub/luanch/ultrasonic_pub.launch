@@ -1,0 +1,5 @@
+<launch>
+ <node pkg="ultrasonic_pub" type="ultrasonic_pub" name="ultrasonic_pub" output="screen" respawn="false">
+  <param name="can_device" value="can2"/>
+ </node> 
+</launch>

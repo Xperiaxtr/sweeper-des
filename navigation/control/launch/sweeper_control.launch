@@ -1,0 +1,93 @@
+<launch>
+  <node pkg="controll" type="sweeper_controll" name="sweeper_controll" output="screen" respawn="false">
+
+    <param name="curb_v_min"      value="0.28" type="double"/>
+    <param name="curb_v_middle"   value="0.83" type="double"/>
+    <param name="curb_v_max"      value="1.3"  type="double"/>
+    
+    <param name="trace_v_min"     value="0.28" type="double"/>
+    <param name="trace_v_middle"  value="0.83" type="double"/>
+    <param name="trace_v_max"     value="1.3"  type="double"/>
+
+    <param name="fre_control" value="20.0" type="double"/>
+
+    <param name="wheelCurvlebase" value="0.6" type="double"/>
+   
+    <param name="curb_v_min_lookahead_distance" value="3.0" type="double"/>
+    <param name="curb_v_min_lookahead_distance2" value="3.5" type="double"/>
+    <param name="curb_v_middle_lookahead_distance" value="4.0" type="double"/>
+    <param name="curb_v_middle_lookahead_distance2" value="4.5" type="double"/>
+    <param name="curb_v_max_lookahead_distance" value="4.5" type="double"/>
+    <param name="curb_v_max_lookahead_distance2" value="5.0" type="double"/>
+
+    <param name="trace_v_min_lookahead_distance" value="2.0" type="double"/>
+    <param name="trace_v_min_lookahead_distance2" value="2.5" type="double"/>
+    <param name="trace_v_middle_lookahead_distance" value="3.0" type="double"/>
+    <param name="trace_v_middle_lookahead_distance2" value="3.5" type="double"/>
+    <param name="trace_v_max_lookahead_distance" value="4.0" type="double"/>
+    <param name="trace_v_max_lookahead_distance2" value="4.5" type="double"/>
+
+    <param name="position_tolerance" value="0.2" type="double"/>
+    <param name="steering_angle_limit" value="0.786" type="double"/>
+    <param name="turn_left_threshold" value="10.0" type="double"/>
+    <param name="control_angular_para" value="20.0" type="double"/>
+    <param name="angular_max" value="400.0" type="double"/>
+    <param name="angular_min" value="200.0" type="double"/>
+    <param name="diff_steering_limited" value="15.0" type="double"/>
+
+    <param name="proportional_gain_steering" value="2.0" type="double"/>
+    <param name="factor_steering_angle1" value="0.9" type="double"/>
+    <param name="factor_steering_angle2" value="0.1" type="double"/>
+
+    <param name="stopping_forward_distance" value="1.5" type="double"/>
+    <param name="detecing_lateral_y" value="0.2" type="double"/>
+    <param name="detecing_lateral_x" value="0.5" type="double"/>
+
+    <param name="ultra_forward_stopping_distance" value="2.0" type="double"/>
+    <param name="ultra_lateral_stopping_distance" value="1.6" type="double"/>
+
+
+    <param name="wj_radar_height_low" value="1.1" type="double"/>
+    <param name="wj_radar_height_up" value="1.3" type="double"/>
+
+
+    <param name="detection_area_length"  value="1.6" type="double"/>
+    <param name="detection_area_width"  value="0.3"  type="double"/>
+    <param name="detection_area_high_low_boundary" value="-1.8" type="double"/>
+    <param name="detection_area_high_up_boundary" value="0.01" type="double"/>
+
+    <param name="sweeper_length"                 value="1.0"      type="double"/>
+    <param name="sweeper_half_width"             value="0.8"      type="double"/>
+    <param name="sweeper_front_half_width"       value="0.76"     type="double"/>
+    <param name="wj_lidar_sides_tolerance"       value="0.01"     type="double" />
+    <param name="wj_lidar_sides_left_tolerance"  value="0.3"      type="double" />
+    <param name="wj_lidar_sides_right_tolerance" value="0.3"      type="double" />
+
+    <param name="kgc"                 value="1.1"      type="double"/>
+    <param name="coeffi_a"            value="1.0"      type="double"/>
+    <param name="coeffi_b"            value="0.2"      type="double"/>
+
+    <param name="obstacle_forward_valid_nums"    value="10"       type="int"/>
+    <param name="obstacle_lateral_valid_nums"    value="4"      type="int" />
+
+    <param name="flag_is_fusion"                     value="true"      type="bool" />
+    <param name="flag_lead_correct_compensation"     value="false"     type="bool" />
+    <param name="flag_smooth_steering"               value="true"      type="bool" />
+   
+    <param name="pid_dt" value="0.05"/>
+
+    <param name="torque_pid_kp" value="10.0"/>
+    <param name="torque_pid_ki" value="5"/>
+    <param name="torque_pid_kd" value="0.0"/>
+    <param name="torque_min" value="20.0"/>
+    <param name="torque_max" value="45.0"/>
+    <param name="last_torque" value="0.0"/>
+
+    <param name="brake_pid_kp" value="30.0"/>
+    <param name="brake_pid_ki" value="15.0"/>
+    <param name="brake_pid_kd" value="0.0"/>
+    <param name="brake_min" value="40.0"/>
+    <param name="brake_max" value="100.0"/>
+    <param name="last_brake" value="00.0"/>
+  </node>
+</launch>

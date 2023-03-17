@@ -1,0 +1,8 @@
+<launch>
+
+    <node pkg="calib_lidar_to_gps_imu" type="calib_gps_to_livox" name="calib_gps_to_livox" output="screen" >
+        <param name="path_name"          type="string"   value="/path/gps_odom_path.txt" />
+    </node>
+    <!--node pkg="rqt_plot" type="rqt_plot" name="rqt_plot" output="screen" >
+    </node-->
+</launch>

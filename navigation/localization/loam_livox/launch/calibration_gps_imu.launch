@@ -1,0 +1,6 @@
+<launch>
+
+  <include file="$(find loam_livox)/launch/calibration.launch" />
+  <include file="$(find sweeper_odom)/launch/fusion_imu.launch" />
+  
+</launch>

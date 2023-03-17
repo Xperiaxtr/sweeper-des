@@ -1,0 +1,35 @@
+mapping:
+    corner_map_filter:  0.4
+    surf_map_filter: 0.8
+    intensity_map_filter: 0.4
+    corner_filter: 0.4
+    surf_filter: 0.8
+    intensity_filter: 0.4
+
+localization:
+    corner_map_filter: 0.4
+    surf_map_filter: 0.8
+    intensity_map_filter: 0.4
+    corner_filter: 0.4
+    surf_filter: 0.8 
+    intensity_filter: 0.4 
+
+save_map:
+    corner_map_size: 0.3
+    surf_map_filter: 0.4
+    intensity_map_filter: 0.3
+
+feature:
+    livox_hight: 1.79
+    corner_min_curvature: 0.01
+    surf_max_curvature: 0.005
+    the_min_hight: 0.06
+    intensity_min_different: 15.0
+    min_slope_different: 0.1
+    max_z_hight: 0.5
+
+#gnss的中心数据是指，gnss减去该值，使得gnss的位置在匹配范围内
+gnss:
+    gnss_origin_x: 684492
+    gnss_origin_y: 3112760
+    gnss_origin_z: 66

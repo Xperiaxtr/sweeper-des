@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="lpms_ig1" type="lpms_ig1_node" name="lpms_ig1_node" output="screen"/>
+</launch>

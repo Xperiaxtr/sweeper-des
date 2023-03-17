@@ -1,0 +1,18 @@
+<launch>
+	
+	<arg name="bd_list" default="1LVDFCE00502621"/>
+
+    <!--node name="livox_lidar_publisher" pkg="display_lidar_points" 
+	      type="display_lidar_points_node" required="true"
+	      output="screen" args="$(arg bd_list)"/-->
+	<node name="livox_lidar_publisher" pkg="display_lidar_points" 
+	      type="display_lidar_points_node" required="true"
+	      output="screen">
+    	<param name="bd_list_1" type="string" value="1LVDH490067S461"/>
+    	<param name="bd_list_2" type="string" value="1LVDH490067S462"/>
+    	<param name="bd_list_3" type="string" value="1LVDH490067S463"/>
+        <param name="flag_lidar_miss_"     type="bool" value="false"/>
+        <param name="flag_error_code_used" type="bool" value="false"/>
+	<param name="flag_livox_extrinsic" type="bool" value="false"/>
+	</node>
+</launch>

@@ -1,0 +1,13 @@
+<launch>
+
+    <node pkg="calibration_exterior_parameter" type="calib_livox_yaw" name="calib_livox_yaw" output="screen" >
+        <!-- <param name="path_name"          type="string"   value="/path/gps_odom_path.txt" /> -->
+    <param name="livox_hight"                        type="double"     value="1.8564" />
+    <param name="livox_roll"                      type="double"     value="0.0171624" />
+  	<param name="livox_pitch"     		            type="double"     value="0.339766"/>
+    <!-- <param name="livox_yaw"                    type="double"     value="1" /> -->
+
+    <param name="car_width"     		            type="double"     value="1.195" />
+    <param name="two_point_dis"                    type="double"     value="1.80" />
+    </node>
+</launch>

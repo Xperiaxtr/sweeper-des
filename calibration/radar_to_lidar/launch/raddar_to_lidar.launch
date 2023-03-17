@@ -1,0 +1,11 @@
+<launch>
+ <node pkg="radar_to_lidar" name="radar_to_lidar" type="radar_to_lidar" output="screen" respawn="false">
+  <param name="lidar_hegihts"               type="double"    value="2.04"/>
+  <param name="lidar_classify_distance_threshold" type="double" value="0.15"/>
+  <param name="yaw_radar_left_to_straight"  type="double"    value="0.802665"/>
+  <param name="yaw_radar_right_to_straight" type="double"    value="-0.802665"/>
+  <param name="pcd_destination"             type="string"    value="../sweeper_ws/dj.pcd"/>
+  <param name="pcd_converted"               type="string "   value="../sweeper_ws/left.pcd"/>
+  <param name="calibration_yaml_address"    type="string"    value="../sweeper_ws"/>
+ </node>
+</launch>

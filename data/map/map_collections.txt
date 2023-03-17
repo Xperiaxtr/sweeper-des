@@ -1,0 +1,11 @@
+684648.500000 3112677.500000 ../sweeper_ws/src/sweeper_haide/data/map/684648.pcd
+684673.062500 3112657.500000 ../sweeper_ws/src/sweeper_haide/data/map/684673.pcd
+684706.500000 3112635.750000 ../sweeper_ws/src/sweeper_haide/data/map/684706.pcd
+684648.500000 3112677.500000 ../sweeper_ws/src/sweeper_haide/data/map/684648.pcd
+684706.500000 3112635.750000 ../sweeper_ws/src/sweeper_haide/data/map/684706.pcd
+0.000000 0.000000 /home/cidi/.ros
+684706.500000 3112635.750000 ../sweeper_ws/src/sweeper_haide/data/map/684706.pcd
+684706.500000 3112635.750000 ../sweeper_ws/src/sweeper_haide/data/map/684706.pcd
+684673.062500 3112657.500000 ../sweeper_ws/src/sweeper_haide/data/map/684673.pcd
+684673.062500 3112657.500000 ../sweeper_ws/src/sweeper_haide/data/map/684673.pcd
+684673.062500 3112657.500000 ../sweeper_ws/src/sweeper_haide/data/map/684673.pcd

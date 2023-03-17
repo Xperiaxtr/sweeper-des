@@ -1,0 +1,35 @@
+<launch>
+
+<!-- <rosparam command="load" file="../sweeper_ws/src/sweeper_haide/calibration/data/mapping_localization.yaml" /> -->
+
+<node pkg="mapping" type = "matcher_node" name = "matcher_node" output = "screen">
+  <param name="max_iteration"                 type="double"   value="8" />
+  <param name="allow_open_lidar_odom"         type="bool"     value="false" />
+  <param name="use_ndt_mode"         type="bool"     value="true" />
+
+  <param name="use_imu_data"         type="bool"     value="true" />
+  <param name="use_odom_data"         type="bool"     value="true" />
+  <param name="use_gnss_data"         type="bool"     value="true" />
+
+  <param name="corner_map_filter"     	   type="double"     value="0.4" /> 
+  <param name="surf_map_filter"                type="double"     value="0.8" />
+  <param name="intensity_map_filter"     	   type="double"     value="0.4" /> 
+  <param name="cloud_map_filter"     	   type="double"     value="0.4" />
+
+  <param name="corner_filter"     	   type="double"     value="0.4" /> 
+  <param name="surf_filter"     	   type="double"     value="0.8" /> 
+  <param name="intensity_filter"     	   type="double"     value="0.4" /> 
+  <param name="cloud_filter"     	   type="double"     value="0.3" /> 
+
+  <!--feature参数-->
+  <param name="livox_hight"     	   type="double"     value="1.79" /> 
+  <param name="corner_min_curvature"     	   type="double"     value="0.01" /> 
+  <param name="surf_max_curvature"     	   type="double"     value="0.005" />
+  <param name="the_min_hight"     	   type="double"     value="0.06" /> 
+  <param name="intensity_min_different"     	   type="double"     value="15.0" /> 
+  <param name="min_slope_different"     	   type="double"     value="0.1" />
+  <param name="max_z_hight"     	   type="double"     value="0.06" />
+  
+
+</node>
+</launch>

@@ -1,0 +1,16 @@
+<launch>
+  <node pkg="sweeper_pose_ekf" type="sweeper_ekf_node" name="sweeper_ekf_node" output="screen" respawn="false">
+    <param name="omga_variance" value="0.4" type="double"/>
+    <param name="speed_acc" value="0.3" type="double"/>
+    <param name="slam_cov_mag" value="0.2" type="double"/>
+    <!--三种模式，1.地图模式（只采用lidar数据和imu和车速）
+    2.gnss模式（只采用gnss和imu车速）
+    3.全局模式（采用gnss，lidar,imu，车速融合）-->
+    <param name="use_lidar_data" value="true" type="bool"/>
+    <param name="use_gnss_data" value="true" type="bool"/>
+    <!--是否采用小图模式-->
+    <param name="use_small_map_mode" type="bool" value="false" />
+    <!--默认是否开启融合定位-->
+    <param name="open_fusion_localization" value="false" type="bool"/>
+  </node>
+</launch>

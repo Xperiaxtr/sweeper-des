@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <node pkg="v2x" type="v2x" name="v2x" output="screen">
+    <param name="port" value="5000"/> 
+  </node>
+</launch>

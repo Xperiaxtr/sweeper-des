@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find sweeper_odom)/launch/fusion_gps_imu.launch" />
+    <include file="$(find loam_livox)/launch/get_feature.launch" />
+    <include file="$(find loam_livox)/launch/livox_intensity_mapping.launch" />
+</launch>

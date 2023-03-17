@@ -1,0 +1,143 @@
+<launch>
+    <node name="planning"  pkg="planning"  type="planning" output="screen">
+    <!--清扫模式: 0: 靠左边马路沿清扫; 1: 靠右边马路沿清扫/-->
+    <param name="curb_sweep_mode" type="int" value="1"/>
+
+    <!--car_width,car_length分别是车子的长和宽,单位m,马路沿的膨胀宽度要以此为依据/-->
+    <!--road_edge_thickness：马路沿膨胀宽度调整阈值,单位m/-->
+    <param name="car_width" type="double" value="1.4"/>
+    <param name="car_length" type="double" value="1.8"/>
+    <param name="road_edge_thickness" type="double" value="0.2"/>
+
+    <!--sweep_width:清扫车作业宽度,单位m/-->
+    <param name="sweep_width" type="double" value="1.8"/>
+
+    <!--erode_x：马路沿原始图腐蚀宽度; erode_y：马路沿原始图腐蚀高度/-->
+    <!--height_img_dilate: 对高度障碍物进行额外膨胀宽度/-->
+　　 <param name="erode_x" type="double" value="0.2"/>
+　　 <param name="erode_y" type="double" value="0.6"/>
+    <param name="height_img_dilate" type="int" value="70"/>
+
+    <!--obj_expand_x: 障碍物膨胀宽度; obj_expand_y: 障碍物膨胀长度/-->
+    <!--obstacle_thickness：障碍物膨胀调整阈值/-->
+    <param name="obj_expand_x" type="double" value="2.2"/>
+    <param name="obj_expand_y" type="double" value="7.2"/>
+    <param name="obstacle_thickness" type="double" value="0.2"/>
+
+    <!--min_turn_radius: 路径规划最小转弯半径，单位cm/-->
+    <!--turn_obstacle_radius: 判断拐点的最小转弯半径，单位cm/-->
+    <param name="min_turn_radius" type="double" value="2.5"/>
+    <param name="turn_obstacle_radius" type="double"  value="300"/>
+
+    <!--/livox/lidar: 大疆激光雷达；/sweeper/sensor/fusion/lidar_radar: 融合激光雷达/-->
+    <param name="lidar_topic" type="string" value="/livox/lidar"/>
+
+    <!--曲线拟合方式：0: 不拟合;　1: BS样条曲线拟合; 2: 多项式拟合/-->
+    <param name="fit_mode" type="int" value="1"/>
+
+    <!--order代表拟合几次多项式/-->
+    <param name="order" type="int" value="2"/>
+
+    <!--sparse_factor: 对拟合曲线点稀疏因子/-->
+    <param name="sparse_factor" type="int" value="10"/>
+    
+    <!--调试模式下图像显示：0: 不显示; 1: 显示/-->
+    <param name="show_img_debug" type="int" value="1"/> 
+
+    <!--马路沿检测参数/-->
+    <!--单线激光雷达离大疆激光雷达安装高度值，必须与radar_fusion.luanch中保持一致/-->
+    <param name="wj_height" type="double" value="1.206"/>
+　　 <!--road_edge_height: 拟合马路沿离地高度阈值/-->
+    <param name="road_edge_thre" type="double" value="0.35"/>
+    <!--height_img_thre: 低障碍物离地高度阈值/-->
+    <param name="low_obstacle_thre" type="double" value="0.35"/>
+    <!--height_img_thre: 高障碍物离地高度阈值，主要是考虑清扫车反光镜/-->
+    <param name="high_obstacle_thre" type="double" value="1.4"/>
+    <!--planefit_thre: 拟合平面阈值/-->
+    <param name="planefit_thre" type="double" value="0.2"/>
+    <!--abs_ground_height:　激光雷达离地面高度/-->
+    <param name="abs_ground_height" type="double" value="1.77615"/>
+   
+    <!--左右清扫贴边调整贴边精度参数，范围(-50,50),单位cm/-->
+    <param name="right_trans_thre" type="int" value="20"/>
+    <param name="left_trans_thre" type="int" value="20"/>
+
+    <!--判定障碍物是否要进行避障的条件,车身坐标FLU/-->
+    <!--obstacle_x:车前方8m范围内/-->
+    <!--obstacle_y:车左右5M范围内/-->
+    <param name="obstacle_x" type="double" value="8.0"/>
+    <param name="obstacle_y" type="double" value="5.0"/>
+
+    <!--紧急停车范围/-->
+    <param name="e_stop_x"           type="double"        value="2.0"/>
+    <param name="e_stop_y"           type="double"        value="0.55"/>
+    <param name="e_stop_y_dynamic"   type="int"        value="700"/>
+
+    <!--障碍物速度阈值/-->
+    <param name="speed_thre" type="double" value="0.3"/>
+
+    <!--马路沿路径提取范围/-->
+    <param name="start_row" type="int" value="600"/>  
+　　 <param name="end_row" type="int" value="980"/>  
+
+    <!--马路沿模式在没有检测到边界的条件下，向左向右寻找边界行驶距离，大于此距离则沿直线行驶/-->
+    <param name="straight_distance_thre" type="double" value="2.5"/>
+
+    <!--在向左向右寻找边界的斜率，该斜率为与y轴的夹角,车身坐标,单位为度/-->
+    <param name="slope_angle" type="double" value="75"/>
+
+    <!--轨迹点到车身斜率过滤阈值/-->
+    <param name="filter_slop_thre" type="double" value="40"/>
+
+    <!--障碍物的最小高度/-->
+    <param name="barrier_min_height"    type="double"   value="0.3"/>
+    
+    <!--用于判断马路沿轮廓是否发生突变阈值/-->
+    <!--delta_dis_min_x: x方向突变阈值/-->
+    <!--delta_dis_min_y: y方向突变阈值/-->
+    <param name="delta_dis_min_x"    type="double"   value="0.4"/>
+    <param name="delta_dis_min_y"    type="double"   value="-0.4"/>
+
+    <!--用于判断寻迹模式下障碍物距离是否发生突变阈值/-->
+    <param name="delta_dis_min_trace"    type="double"   value="30"/>
+
+    <!--是否使用双园法标志/-->
+    <param name="double_circle_flag"    type="bool"   value="false"/>
+
+    <param name="trace_velocity_x_thre" type="double" value="1.0"/>
+    <param name="trace_velocity_y_thre" type="double" value="1.0"/>
+    <param name="curb_velocity_x_thre" type="double" value="1.0"/>
+    <param name="curb_velocity_y_thre" type="double" value="5"/>
+
+    <!--是否绕障判断阈值阈值,单位m/-->
+    <param name="curb_obstacle_min" type="double" value="0.2"/>
+    <param name="curb_obstacle_max" type="double" value="2.0"/>
+    <param name="trace_obstacle_min" type="double" value="0.5"/>
+    <param name="trace_obstacle_max" type="double" value="2.0"/>
+
+    <!--绕障语音播报阈值/-->
+    <param name="broadcast_thre" type="double" value="0.5"/>
+
+    <!--距离与图像像素的转换因子/-->
+    <param name="resolution"    type="double"   value="0.02"/>
+
+    <!--是否加载可行使区域地图标志/-->
+    <param name="ues_roi_flag"    type="bool"   value="false"/>
+
+    <!--图像大小，车在图像中的位置/-->
+    <param name="width"     type="int"  value="500"/>
+    <param name="height"    type="int"  value="500"/>
+
+    <!--车在图像中前向距离，单位m/-->
+    <param name="front_dis" type="double"  value="10"/>
+
+    <!--地面高度差阈值/-->
+    <param name="delta_ground_thre"    type="double"   value="0.1"/>
+
+    <!--轨迹与边界相交判定范围,图像坐标/-->
+    <param name="intersect_x"    type="double"   value="3.5"/>
+    <param name="intersect_y"    type="double"   value="6.0"/>
+
+    </node>
+  
+</launch>

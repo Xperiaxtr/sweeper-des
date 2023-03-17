@@ -1,0 +1,10 @@
+
+# ignore dir
+build/
+devel/
+src/CMakeLists.txt
+.catkin_workspace
+#whitelist
+
+
+

@@ -1,0 +1,28 @@
+<launch>
+ <node pkg="radar_fusion" type="radar_fusion" name="radar_fusion" output="screen" respawn="false">
+  <param name="sweeper_length"         value="1.7"/>
+  <param name="sweeper_front_length"   value="1.0"/>
+  <param name="sweeper_whole_length"   value="2.8"/>
+  <param name="sweeper_half_width"     value="0.75"/>
+  <param name="fusion_time"            value="0.11"/>
+
+  <param name="fusion_diff_time"       value="0.15"/>
+  <param name="wj_height"              value="1.506"/>
+  <param name="wj_filter_forward_x"    value="0.6"/>
+  <param name="wj_filter_area_x"       value="1.1"/>
+  <param name="wj_filter_area_y"       value="0.2"/>
+  <param name="wj_filter_area2_x_low"  value="0.45"/>
+  <param name="wj_filter_area2_x_up"   value="0.6"/>
+  <param name="wj_filter_area2_y_low"  value="0.4"/>
+  <param name="wj_filter_area2_y_up"   value="0.6"/>
+
+
+  <param name="flag_lidar_sync"        value="false"/>
+  <param name="flag_radar_left_sync"   value="false"/>
+  <param name="flag_radar_right_sync"  value="false"/>
+
+  <param name="dust_filter_x"       value="0.5"/>
+  <param name="dust_filter_y"       value="10"/>
+
+ </node> 
+</launch>

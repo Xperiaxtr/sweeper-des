@@ -1,0 +1,12 @@
+<launch>
+ <node pkg="radar_to_radar" name="radar_to_radar" type="radar_to_radar" output="screen" respawn="false">
+  <param name="radar_distance_threshold"    type="double"    value="2.0"/>
+  <param name="radar_x_threshold"           type="double"    value="1.0"/>
+  <param name="classify_distance_thrshold"  type="double"    value="0.２"/>
+  <param name="yaw_radar_left_to_straight"  type="double"    value="0.802665"/>
+  <param name="yaw_radar_right_to_straight" type="double"    value="-0.802665"/>
+  <param name="pcd_destination"             type="string"    value="../sweeper_ws/left.pcd"/>
+  <param name="pcd_converted"               type="string "   value="../sweeper_ws/right.pcd"/>
+  <param name="calibration_yaml_address"    type="string"    value="../sweeper_ws"/>
+ </node>
+</launch>

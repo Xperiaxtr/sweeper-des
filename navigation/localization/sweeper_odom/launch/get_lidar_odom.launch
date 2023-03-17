@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="sweeper_odom" type="get_lidar_odom" name="get_lidar_odom" output="screen" respawn="false">
+  <param name="receive_sweeper_mode"          type="int"      value="4" />
+  <param name="max_iteration"                 type="double"   value="5" />
+  <param name="allow_open_lidar_odom"         type="bool"     value="true" />
+  <!-- <param name="use_gps_to_init"               type="bool"     value = "true"> -->
+
+  </node>
+</launch>

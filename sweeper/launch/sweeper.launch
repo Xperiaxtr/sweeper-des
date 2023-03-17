@@ -1,0 +1,4 @@
+<launch>
+ <node pkg="sweeper" type="sweeper" name="sweeper" output="screen" respawn="false">
+  </node> 
+</launch>

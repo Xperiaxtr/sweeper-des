@@ -1,0 +1,5 @@
+<launch>
+    <param name="max_iteration"     		        type="int"   value="6" /> 
+
+    <node pkg="loam_livox" type="lidar_odom" name="lidar_odom" output="screen" />
+</launch>

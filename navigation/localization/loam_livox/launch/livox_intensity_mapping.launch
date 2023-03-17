@@ -1,0 +1,18 @@
+<launch>
+    <node pkg="loam_livox" type="livox_intensity_mapping" name="livox_intensity_mapping" output="screen" >
+    <!--mapping param-->
+    <param name="using_loop"                        type="bool"     value="true" />
+    <param name="add_gps_edge"                      type="bool"     value="true" />
+  	<param name="using_gps_data"     		            type="bool"     value="true" />
+    <param name="save_odom_path"                    type="bool"     value="true" />
+  	<param name="save_gps_path"     		            type="bool"     value="true" />   
+    <param name="save_gps_correspond_odom_data"     type="bool"     value="true" />
+    <param name="gps_max_cov"     		              type="double"   value="0.12" />
+  	<param name="publish_range_map"     		        type="double"   value="500.0" /> 
+    <param name="plicp_search_radius"     		      type="double"   value="50.0" /> 
+    <param name="icp_loop_history_search_num"       type="double"   value="10" />
+    <param name="icp_loop_radius"     		          type="double"   value="8.0" /> 
+    <param name="icp_loop_score"     		            type="double"   value="0.2" /> 
+    <param name="allow_mapping_mode"     		        type="bool"     value="false" />
+    </node>
+</launch>

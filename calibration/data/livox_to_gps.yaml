@@ -1,0 +1,14 @@
+#livox到gps的变换,haide
+livox_to_gps:
+  from: livox
+  to: gps
+transform:
+  translation:
+    x: 0.827051
+    y: -0.087662
+    z: 1.06
+  rotation:
+    x: -0.002143
+    y: -0.015871
+    z: 0.017538
+    w: 0.999718

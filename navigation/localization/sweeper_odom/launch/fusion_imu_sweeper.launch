@@ -1,0 +1,14 @@
+<launch>
+  <node pkg="sweeper_odom" type="fusion_imu_sweeper" name="fusion_imu_sweeper" output="screen" respawn="false">
+ 
+  <param name="lidar_to_imu_q_x"                type="double"     value="0.00309921459136081" />
+  <param name="lidar_to_imu_q_y"                type="double"     value="0.00440395324035604" />
+  <param name="lidar_to_imu_q_z"                type="double"     value="-0.0022511265806918" />
+  <param name="lidar_to_imu_q_w"                type="double"     value="0.999982966101869" />
+
+  <param name="lidar_to_imu_v_x"                type="double"     value="0.962290192702477" />
+  <param name="lidar_to_imu_v_y"                type="double"     value="0.0571722510874373" />
+  <param name="lidar_to_imu_v_z"                type="double"     value="-2.02006574081161" />
+ 
+  </node>
+</launch>
